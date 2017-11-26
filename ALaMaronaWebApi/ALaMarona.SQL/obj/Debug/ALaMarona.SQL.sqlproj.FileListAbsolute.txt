@@ -1,0 +1,9 @@
+C:\ALaMarona\ALaMaronaWebApi\ALaMarona.SQL\bin\Debug\ALaMarona.SQL.dacpac
+C:\ALaMarona\ALaMaronaWebApi\ALaMarona.SQL\bin\Debug\ALaMarona.SQL.dll
+C:\ALaMarona\ALaMaronaWebApi\ALaMarona.SQL\bin\Debug\ALaMarona.SQL.pdb
+C:\ALaMarona\ALaMaronaWebApi\ALaMarona.SQL\obj\Debug\ALaMarona.SQL.dll
+C:\ALaMarona\ALaMaronaWebApi\ALaMarona.SQL\obj\Debug\ALaMarona.SQL.pdb
+C:\ALaMarona\ALaMaronaWebApi\ALaMarona.SQL\obj\Debug\Model.xml
+C:\ALaMarona\ALaMaronaWebApi\ALaMarona.SQL\obj\Debug\refactor.xml
+C:\ALaMarona\ALaMaronaWebApi\ALaMarona.SQL\obj\Debug\postdeploy.sql
+C:\ALaMarona\ALaMaronaWebApi\ALaMarona.SQL\obj\Debug\predeploy.sql

@@ -1,0 +1,13 @@
+C:\ALaMarona\ALaMaronaDesktop\ALaMarona.Domain\obj\Debug\ALaMarona.Domain.csprojResolveAssemblyReference.cache
+C:\ALaMarona\ALaMarona.Domain\obj\Debug\ALaMarona.Domain.csprojResolveAssemblyReference.cache
+C:\ALaMarona\ALaMarona.Domain\bin\Debug\ALaMarona.Domain.dll.config
+C:\ALaMarona\ALaMarona.Domain\bin\Debug\ALaMarona.Domain.dll
+C:\ALaMarona\ALaMarona.Domain\bin\Debug\ALaMarona.Domain.pdb
+C:\ALaMarona\ALaMarona.Domain\bin\Debug\Eg.Core.dll
+C:\ALaMarona\ALaMarona.Domain\bin\Debug\Iesi.Collections.dll
+C:\ALaMarona\ALaMarona.Domain\bin\Debug\NHibernate.dll
+C:\ALaMarona\ALaMarona.Domain\bin\Debug\Eg.Core.pdb
+C:\ALaMarona\ALaMarona.Domain\bin\Debug\Iesi.Collections.xml
+C:\ALaMarona\ALaMarona.Domain\bin\Debug\NHibernate.xml
+C:\ALaMarona\ALaMarona.Domain\obj\Debug\ALaMarona.Domain.dll
+C:\ALaMarona\ALaMarona.Domain\obj\Debug\ALaMarona.Domain.pdb

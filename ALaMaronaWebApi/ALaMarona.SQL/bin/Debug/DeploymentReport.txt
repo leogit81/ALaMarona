@@ -1,0 +1,36 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [imagenesProductos] (Filegroup)
+       [dbo].[Color] (Table)
+       [dbo].[Direccion] (Table)
+       [dbo].[ImagenProducto] (Table)
+       [dbo].[Localidad] (Table)
+       [dbo].[Pais] (Table)
+       [dbo].[Persona] (Table)
+       [dbo].[Producto] (Table)
+       [dbo].[Provincia] (Table)
+       [dbo].[Stock] (Table)
+       [dbo].[StockMovimiento] (Table)
+       [dbo].[FK_Direccion_Pais] (Foreign Key)
+       [dbo].[FK_Direccion_Provincia] (Foreign Key)
+       [dbo].[FK_Direccion_Localidad] (Foreign Key)
+       [dbo].[FK_ImagenProducto_Producto] (Foreign Key)
+       [dbo].[FK_Localidad_Provincia] (Foreign Key)
+       [dbo].[FK_Persona_Domicilio] (Foreign Key)
+       [dbo].[FK_Persona_LugarNacimiento] (Foreign Key)
+       [dbo].[FK_Producto_Color] (Foreign Key)
+       [dbo].[FK_Provincia_Pais] (Foreign Key)
+       [dbo].[FK_Stock_Producto] (Foreign Key)
+       [dbo].[FK_StockMovimiento_Stock] (Foreign Key)
+
+** Supporting actions

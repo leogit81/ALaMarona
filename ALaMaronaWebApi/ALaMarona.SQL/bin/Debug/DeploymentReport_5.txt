@@ -1,0 +1,31 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Localidad]
+       [dbo].[Pais]
+       [dbo].[Provincia]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Table rebuild
+       [dbo].[Localidad] (Table)
+       [dbo].[Pais] (Table)
+       [dbo].[Provincia] (Table)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_Direccion_Localidad] (Foreign Key)
+       [dbo].[FK_Localidad_Provincia] (Foreign Key)
+       [dbo].[FK_Direccion_Pais] (Foreign Key)
+       [dbo].[FK_Provincia_Pais] (Foreign Key)
+       [dbo].[FK_Direccion_Provincia] (Foreign Key)
+     Create
+       [dbo].[FK_Direccion_Localidad] (Foreign Key)
+       [dbo].[FK_Localidad_Provincia] (Foreign Key)
+       [dbo].[FK_Direccion_Pais] (Foreign Key)
+       [dbo].[FK_Provincia_Pais] (Foreign Key)
+       [dbo].[FK_Direccion_Provincia] (Foreign Key)
