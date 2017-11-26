@@ -1,0 +1,3 @@
+[submodule "ALaMaronaDesktop"]
+	path = ALaMaronaDesktop
+	url = git@github.com:leogit81/ALaMaronaDesktop.git
