@@ -1,0 +1,24 @@
+{
+  "name": "alamarona",
+  "version": "1.0.0",
+  "description": "Angular Directives in depth - Pluralsight",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "author": "Leonardo Oneto",
+  "license": " MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/leogit81/alamaronaweb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leogit81/alamaronaweb/issues"
+  },
+  "homepage": "https://github.com/leogit81/alamaronaweb#readme",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "bootstrap": "^3.3.7"
+  }
+}

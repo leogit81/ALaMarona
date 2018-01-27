@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="ALaMarona.Domain" namespace="ALaMarona.Domain.Entities">
-  <class name="Imagen">
+  <class name="Imagen" table="ImagenProducto">
     <id name="Id">
       <generator class="identity"></generator>
     </id>
-    <property name="Nombre" not-null="false" />
     <property name="Content" not-null="true" >
       <column name="imagen"/>
     </property>

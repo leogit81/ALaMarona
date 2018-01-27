@@ -1,4 +1,3 @@
-C:\ALaMarona\ALaMaronaDAL\obj\Debug\ALaMaronaDAL.csprojResolveAssemblyReference.cache
 C:\ALaMarona\ALaMaronaDAL\bin\Debug\Mappings\Producto.hbm.xml
 C:\ALaMarona\ALaMaronaDAL\bin\Debug\Mappings\Color.hbm.xml
 C:\ALaMarona\ALaMaronaDAL\bin\Debug\Mappings\Localidad.hbm.xml
@@ -13,12 +12,8 @@ C:\ALaMarona\ALaMaronaDAL\bin\Debug\ALaMaronaDAL.dll.config
 C:\ALaMarona\ALaMaronaDAL\bin\Debug\ALaMaronaDAL.dll
 C:\ALaMarona\ALaMaronaDAL\bin\Debug\ALaMaronaDAL.pdb
 C:\ALaMarona\ALaMaronaDAL\bin\Debug\ALaMarona.Domain.dll
-C:\ALaMarona\ALaMaronaDAL\bin\Debug\Iesi.Collections.dll
-C:\ALaMarona\ALaMaronaDAL\bin\Debug\NHibernate.dll
 C:\ALaMarona\ALaMaronaDAL\bin\Debug\Eg.Core.dll
 C:\ALaMarona\ALaMaronaDAL\bin\Debug\ALaMarona.Domain.pdb
-C:\ALaMarona\ALaMaronaDAL\bin\Debug\Iesi.Collections.xml
-C:\ALaMarona\ALaMaronaDAL\bin\Debug\NHibernate.xml
-C:\ALaMarona\ALaMaronaDAL\bin\Debug\Eg.Core.pdb
+C:\ALaMarona\ALaMaronaDAL\obj\Debug\ALaMaronaDAL.csprojResolveAssemblyReference.cache
 C:\ALaMarona\ALaMaronaDAL\obj\Debug\ALaMaronaDAL.dll
 C:\ALaMarona\ALaMaronaDAL\obj\Debug\ALaMaronaDAL.pdb
