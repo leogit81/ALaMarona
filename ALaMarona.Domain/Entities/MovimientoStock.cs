@@ -10,9 +10,9 @@ namespace ALaMarona.Domain.Entities
         {
         }
 
-        public virtual Stock Stock { get; set; }
+        public virtual Producto Producto { get; set; }
         public virtual DateTime Fecha { get; set; }
         public virtual int Cantidad { get; set; }
-        public virtual decimal PrecioUnitario { get; set; }
+        public virtual decimal PrecioCompra { get; set; }
     }
 }

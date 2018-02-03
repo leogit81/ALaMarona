@@ -1,10 +1,10 @@
-﻿CREATE TABLE [dbo].[StockMovimiento] (
+﻿CREATE TABLE [dbo].[MovimientoStock] (
     [id]             BIGINT          NOT NULL,
-    [idStock]        BIGINT          NOT NULL,
+    [idProducto]        BIGINT          NOT NULL,
     [fecha]          DATETIME        NOT NULL,
     [cantidad]       INT             NOT NULL,
-    [precioUnitario] DECIMAL (19, 4) NOT NULL,
-    CONSTRAINT [PK_StockMovimiento] PRIMARY KEY CLUSTERED ([id] ASC),
-    CONSTRAINT [FK_StockMovimiento_Stock] FOREIGN KEY ([idStock]) REFERENCES [dbo].[Stock] ([id])
+    [precioCompra] DECIMAL (19, 4) NOT NULL,
+    CONSTRAINT [PK_MovimientoStock] PRIMARY KEY CLUSTERED ([id] ASC),
+    CONSTRAINT [FK_StockMovimiento_Producto] FOREIGN KEY ([idProducto]) REFERENCES [dbo].[Producto] ([id])
 );
 

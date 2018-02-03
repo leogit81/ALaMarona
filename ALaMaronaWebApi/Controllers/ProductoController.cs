@@ -2,11 +2,15 @@
 using ALaMarona.Domain.DTOs;
 using ALaMarona.Domain.Entities;
 using ALaMarona.Core.Controller;
+using ALaMarona.Core.Services;
 
 namespace ALaMaronaWebApi.Controllers
 {
     [RoutePrefix("api/Producto")]
-    public class ProductoController : GenericController<Producto, long, ProductoDTO, long>
+    public class ProductoController : GenericController<Producto, long, ProductoDTO>
     {
+        public ProductoController(IGenericService<Producto, long> genericService) : base(genericService)
+        {
+        }
     }
 }

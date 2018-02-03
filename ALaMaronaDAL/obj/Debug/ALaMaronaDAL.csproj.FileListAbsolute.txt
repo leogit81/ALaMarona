@@ -6,8 +6,6 @@ C:\ALaMarona\ALaMaronaDAL\bin\Debug\Mappings\Pais.hbm.xml
 C:\ALaMarona\ALaMaronaDAL\bin\Debug\Mappings\Direccion.hbm.xml
 C:\ALaMarona\ALaMaronaDAL\bin\Debug\Mappings\Persona.hbm.xml
 C:\ALaMarona\ALaMaronaDAL\bin\Debug\Mappings\Imagen.hbm.xml
-C:\ALaMarona\ALaMaronaDAL\bin\Debug\Mappings\Stock.xml
-C:\ALaMarona\ALaMaronaDAL\bin\Debug\Mappings\MovimientoStock.xml
 C:\ALaMarona\ALaMaronaDAL\bin\Debug\ALaMaronaDAL.dll.config
 C:\ALaMarona\ALaMaronaDAL\bin\Debug\ALaMaronaDAL.dll
 C:\ALaMarona\ALaMaronaDAL\bin\Debug\ALaMaronaDAL.pdb
@@ -17,3 +15,4 @@ C:\ALaMarona\ALaMaronaDAL\bin\Debug\ALaMarona.Domain.pdb
 C:\ALaMarona\ALaMaronaDAL\obj\Debug\ALaMaronaDAL.csprojResolveAssemblyReference.cache
 C:\ALaMarona\ALaMaronaDAL\obj\Debug\ALaMaronaDAL.dll
 C:\ALaMarona\ALaMaronaDAL\obj\Debug\ALaMaronaDAL.pdb
+C:\ALaMarona\ALaMaronaDAL\bin\Debug\Mappings\MovimientoStock.hbm.xml

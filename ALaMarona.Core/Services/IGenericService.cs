@@ -1,14 +1,14 @@
-﻿using Eg.Core.DTOs;
+﻿using Eg.Core;
 using System.Collections.Generic;
 
 namespace ALaMarona.Core.Services
 {
-    public interface IGenericService<TDTO, TDTOId> where TDTO : GenericDTO<TDTOId>
+    public interface IGenericService<T, TId> where T : Entity<TId>
     {
-        IEnumerable<TDTO> Get();
-        TDTO Get(TDTOId id);
-        void Save(TDTO entityDto);
-        void Update(TDTO entityDto);
-        void Delete(TDTOId id);
+        IEnumerable<T> Get();
+        T Get(TId id);
+        void Save(T entityDto);
+        void Update(T entityDto);
+        void Delete(TId id);
     }
 }

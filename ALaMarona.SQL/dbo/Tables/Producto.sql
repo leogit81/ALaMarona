@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Producto] (
     [id]          BIGINT        IDENTITY (1, 1) NOT NULL,
-    [Codigo]      NCHAR (30)    NOT NULL,
+    [Codigo]      NVARCHAR (10)    NOT NULL,
     [Descripcion] VARCHAR (150) NULL,
     [Talle]       INT           NULL,
     [idColor]     INT           NULL,

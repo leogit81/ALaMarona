@@ -14,5 +14,9 @@
       <key column="IdProducto"/>
       <one-to-many class="ALaMarona.Domain.Entities.Imagen, ALaMarona.Domain"/>
     </set>
+    <set cascade="all-delete-orphan" inverse="true" name="MovimientosDeStock">
+      <key column="IdProducto"/>
+      <one-to-many class="ALaMarona.Domain.Entities.MovimientoStock, ALaMarona.Domain"/>
+    </set>
   </class>
 </hibernate-mapping>

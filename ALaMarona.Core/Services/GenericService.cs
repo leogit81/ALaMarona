@@ -1,60 +1,51 @@
-﻿using AutoMapper;
-using Eg.Core;
+﻿using Eg.Core;
 using Eg.Core.Data;
-using Eg.Core.DTOs;
+using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace ALaMarona.Core.Services
 {
-    public class GenericService<T, TId, TDTO, TDTOId> : IGenericService<TDTO, TDTOId> where T: Entity<TId> where TDTO : GenericDTO<TDTOId>
+    public class GenericService<T, TId> : IGenericService<T, TId> where T: Entity<TId>
     {
         protected IRepository<T, TId> repository;
-        //protected IMapper mapper;
+        protected ISessionFactory _sessionFactory;
 
-        public GenericService(IRepository<T, TId> repo)
+        public GenericService(IRepository<T, TId> repo, ISessionFactory sessionFactory)
         {
             repository = repo;
+            _sessionFactory = sessionFactory;
         }
 
-        public void Delete(TDTOId id)
+        public virtual void Delete(TId id)
         {
             var entity = repository.FirstOrDefault(e => e.Id.Equals(id));
             repository.Remove(entity);
         }
 
-        public IEnumerable<TDTO> Get()
+        public virtual IEnumerable<T> Get()
         {
-            return repository.Select(p => Mapper.Map<TDTO>(p));
+            return repository.ToList();
         }
 
-        public TDTO Get(TDTOId id)
+        public virtual T Get(TId id)
         {
             if (id == null)
             {
                 throw new ArgumentNullException(nameof(id));
             }
 
-            return Mapper.Map<TDTO>(repository.FirstOrDefault(x => id.Equals(x.Id)));
+            return repository.FirstOrDefault(x => id.Equals(x.Id));
         }
 
-        public void Save(TDTO entityDto)
+        public virtual void Save(T entity)
         {
-            repository.Add(Mapper.Map<T>(entityDto));
+            repository.Add(entity);
         }
 
-        public void Update(TDTO entityDto)
+        public virtual void Update(T entity)
         {
-            var entity = repository.FirstOrDefault(e => e.Id.Equals(entityDto.Id));
-
-            if (entity == null)
-            {
-                throw new ArgumentException("No se encontró la entidad que se quería actualizar");
-            }
-
-            Mapper.Map(entityDto, entity);
-
             repository.Update(entity);
         }
     }

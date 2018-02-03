@@ -58,7 +58,6 @@
     <Compile Include="DTOs\ImagenDTO .cs" />
     <Compile Include="DTOs\LocalidadDTO.cs" />
     <Compile Include="DTOs\MovimientoStockDTO.cs" />
-    <Compile Include="DTOs\StockDTO.cs" />
     <Compile Include="DTOs\PersonaDTO.cs" />
     <Compile Include="DTOs\PaisDTO.cs" />
     <Compile Include="DTOs\ProductoDTO.cs" />
@@ -70,7 +69,6 @@
     <Compile Include="Entities\Localidad.cs" />
     <Compile Include="Entities\Documento.cs" />
     <Compile Include="Entities\MovimientoStock.cs" />
-    <Compile Include="Entities\Stock.cs" />
     <Compile Include="Entities\Provincia.cs" />
     <Compile Include="Entities\Pais.cs" />
     <Compile Include="Entities\Persona.cs" />

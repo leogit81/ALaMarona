@@ -63,7 +63,7 @@ ALTER DATABASE [$(DatabaseName)]
 
 GO
 ALTER DATABASE [$(DatabaseName)]
-    ADD FILE (NAME = [imagenesProductos_2167C654], FILENAME = N'$(DefaultDataPath)$(DefaultFilePrefix)_imagenesProductos_2167C654.mdf') TO FILEGROUP [imagenesProductos];
+    ADD FILE (NAME = [imagenesProductos_74D711E2], FILENAME = N'$(DefaultDataPath)$(DefaultFilePrefix)_imagenesProductos_74D711E2.mdf') TO FILEGROUP [imagenesProductos];
 
 
 GO
@@ -303,49 +303,6 @@ CREATE TABLE [dbo].[ImagenProducto] (
 
 
 GO
-PRINT N'Creating [dbo].[StockMovimiento]...';
-
-
-GO
-CREATE TABLE [dbo].[StockMovimiento] (
-    [id]             BIGINT          NOT NULL,
-    [idStock]        BIGINT          NOT NULL,
-    [fecha]          DATETIME        NOT NULL,
-    [cantidad]       INT             NOT NULL,
-    [precioUnitario] DECIMAL (19, 4) NOT NULL,
-    CONSTRAINT [PK_StockMovimiento] PRIMARY KEY CLUSTERED ([id] ASC)
-);
-
-
-GO
-PRINT N'Creating [dbo].[Stock]...';
-
-
-GO
-CREATE TABLE [dbo].[Stock] (
-    [id]         BIGINT NOT NULL,
-    [idProducto] BIGINT NOT NULL,
-    CONSTRAINT [PK_Stock] PRIMARY KEY CLUSTERED ([id] ASC)
-);
-
-
-GO
-PRINT N'Creating [dbo].[Producto]...';
-
-
-GO
-CREATE TABLE [dbo].[Producto] (
-    [id]          BIGINT        IDENTITY (1, 1) NOT NULL,
-    [Codigo]      NCHAR (30)    NOT NULL,
-    [Descripcion] VARCHAR (150) NULL,
-    [Talle]       INT           NULL,
-    [idColor]     INT           NULL,
-    CONSTRAINT [PK_Producto] PRIMARY KEY CLUSTERED ([id] ASC),
-    CONSTRAINT [UK_CODIGO_PRODUCTO] UNIQUE NONCLUSTERED ([Codigo] ASC)
-);
-
-
-GO
 PRINT N'Creating [dbo].[Color]...';
 
 
@@ -358,6 +315,37 @@ CREATE TABLE [dbo].[Color] (
     CONSTRAINT [PK_Color] PRIMARY KEY CLUSTERED ([id] ASC),
     CONSTRAINT [UK_COLOR_HEXA] UNIQUE NONCLUSTERED ([codigoHexa] ASC),
     CONSTRAINT [UK_NOMBRE] UNIQUE NONCLUSTERED ([Nombre] ASC)
+);
+
+
+GO
+PRINT N'Creating [dbo].[Producto]...';
+
+
+GO
+CREATE TABLE [dbo].[Producto] (
+    [id]          BIGINT        IDENTITY (1, 1) NOT NULL,
+    [Codigo]      NVARCHAR (10) NOT NULL,
+    [Descripcion] VARCHAR (150) NULL,
+    [Talle]       INT           NULL,
+    [idColor]     INT           NULL,
+    CONSTRAINT [PK_Producto] PRIMARY KEY CLUSTERED ([id] ASC),
+    CONSTRAINT [UK_CODIGO_PRODUCTO] UNIQUE NONCLUSTERED ([Codigo] ASC)
+);
+
+
+GO
+PRINT N'Creating [dbo].[MovimientoStock]...';
+
+
+GO
+CREATE TABLE [dbo].[MovimientoStock] (
+    [id]           BIGINT          NOT NULL,
+    [idProducto]   BIGINT          NOT NULL,
+    [fecha]        DATETIME        NOT NULL,
+    [cantidad]     INT             NOT NULL,
+    [precioCompra] DECIMAL (19, 4) NOT NULL,
+    CONSTRAINT [PK_MovimientoStock] PRIMARY KEY CLUSTERED ([id] ASC)
 );
 
 
@@ -434,30 +422,21 @@ ALTER TABLE [dbo].[ImagenProducto]
 
 
 GO
-PRINT N'Creating [dbo].[FK_StockMovimiento_Stock]...';
-
-
-GO
-ALTER TABLE [dbo].[StockMovimiento]
-    ADD CONSTRAINT [FK_StockMovimiento_Stock] FOREIGN KEY ([idStock]) REFERENCES [dbo].[Stock] ([id]);
-
-
-GO
-PRINT N'Creating [dbo].[FK_Stock_Producto]...';
-
-
-GO
-ALTER TABLE [dbo].[Stock]
-    ADD CONSTRAINT [FK_Stock_Producto] FOREIGN KEY ([idProducto]) REFERENCES [dbo].[Producto] ([id]);
-
-
-GO
 PRINT N'Creating [dbo].[FK_Producto_Color]...';
 
 
 GO
 ALTER TABLE [dbo].[Producto]
     ADD CONSTRAINT [FK_Producto_Color] FOREIGN KEY ([idColor]) REFERENCES [dbo].[Color] ([id]);
+
+
+GO
+PRINT N'Creating [dbo].[FK_StockMovimiento_Producto]...';
+
+
+GO
+ALTER TABLE [dbo].[MovimientoStock]
+    ADD CONSTRAINT [FK_StockMovimiento_Producto] FOREIGN KEY ([idProducto]) REFERENCES [dbo].[Producto] ([id]);
 
 
 GO

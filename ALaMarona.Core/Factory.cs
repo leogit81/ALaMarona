@@ -37,28 +37,14 @@ namespace ALaMarona.Core
 
         public void ConfigureMapping()
         {
-        //    Mapper.Initialize(cfg =>
-        //    {
-        //        cfg.CreateMap<Producto, ProductoDTO>().ReverseMap();
-        //        cfg.CreateMap<Stock, StockDTO>().ReverseMap();
-        //        cfg.CreateMap<MovimientoStock, MovimientoStockDTO>().ReverseMap();
-        //        cfg.CreateMap<Color, ColorDTO>().ReverseMap();
-        //    });
-        //    Mapper.Initialize(cfg =>
-        //    {
-        //        cfg.CreateMap<Direccion, DireccionDTO>().ReverseMap();
-        //        cfg.CreateMap<Localidad, LocalidadDTO>().ReverseMap();
-        //        cfg.CreateMap<Provincia, ProvinciaDTO>().ReverseMap();
-        //        cfg.CreateMap<Pais, PaisDTO>().ReverseMap();
-        //    });
             Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<Producto, ProductoDTO>().ReverseMap();
-                cfg.CreateMap<Stock, StockDTO>();
-                cfg.CreateMap<StockDTO, Stock>()
-                .AfterMap((sDto, s) => sDto.Movimientos.ToList()
-                    .ForEach(m => s.AgregarMovimiento(Mapper.Map<MovimientoStock>(m))));
-                cfg.CreateMap<MovimientoStock, MovimientoStockDTO>().ReverseMap();
+
+                cfg.CreateMap<MovimientoStock, MovimientoStockDTO>()
+                .ForMember(target => target.IdProducto, opt => opt.MapFrom(x => x.Producto.Id))
+                .ReverseMap().ForMember(dest => dest.Producto, opt => opt.MapFrom(x => new Producto() { Id = x.IdProducto }));
+
                 cfg.CreateMap<Color, ColorDTO>().ReverseMap();
 
                 cfg.CreateMap<Direccion, DireccionDTO>().ReverseMap();
