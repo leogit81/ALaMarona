@@ -6,6 +6,6 @@
     [idColor]     INT           NULL,
     CONSTRAINT [PK_Producto] PRIMARY KEY CLUSTERED ([id] ASC),
     CONSTRAINT [FK_Producto_Color] FOREIGN KEY ([idColor]) REFERENCES [dbo].[Color] ([id]),
-	CONSTRAINT UK_CODIGO_PRODUCTO UNIQUE(CODIGO)
+	CONSTRAINT UK_CODIGO_PRODUCTO UNIQUE(Codigo)
 );
 

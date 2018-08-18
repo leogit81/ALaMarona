@@ -1,15 +1,15 @@
-﻿using System.Web.Http;
+﻿using ALaMarona.Core.Controller;
 using ALaMarona.Domain.DTOs;
 using ALaMarona.Domain.Entities;
-using ALaMarona.Core.Controller;
-using ALaMarona.Core.Services;
+using ALaMarona.Domain.Generic;
+using System.Web.Http;
 
 namespace ALaMaronaWebApi.Controllers
 {
     [RoutePrefix("api/Direccion")]
     public class DireccionController : GenericController<Direccion, long, DireccionDTO>
     {
-        public DireccionController(IGenericService<Direccion, long> genericService) : base(genericService)
+        public DireccionController(IGenericBusiness<Direccion, long> genericBusiness) : base(genericBusiness)
         {
         }
     }

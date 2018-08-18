@@ -9,8 +9,11 @@ namespace ALaMarona.Domain.Entities
         public virtual string Piso { get; set; }
         public virtual string Departamento { get; set; }
         public virtual string CodigoPostal { get; set; }
+        public virtual long IdPais { get; set; }
         public virtual Pais Pais { get; set; }
+        public virtual long IdProvincia { get; set; }
         public virtual Provincia Provincia {get;set;}
+        public virtual long IdLocalidad { get; set; }
         public virtual Localidad Localidad { get; set; }
     }
 }

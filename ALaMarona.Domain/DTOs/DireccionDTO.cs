@@ -9,6 +9,9 @@ namespace ALaMarona.Domain.DTOs
         public string Piso { get; set; }
         public string Departamento { get; set; }
         public string CodigoPostal { get; set; }
+        public long IdPais { get; set; }
+        public long IdProvincia { get; set; }
+        public long IdLocalidad { get; set; }
         public PaisDTO Pais { get; set; }
         public ProvinciaDTO Provincia {get;set;}
         public LocalidadDTO Localidad { get; set; }

@@ -1,7 +1,0 @@
-C:\ALaMarona\ALaMaronaDesktop\ALaMarona.Domain\obj\Debug\ALaMarona.Domain.csprojResolveAssemblyReference.cache
-C:\ALaMarona\ALaMarona.Domain\bin\Debug\ALaMarona.Domain.dll.config
-C:\ALaMarona\ALaMarona.Domain\bin\Debug\ALaMarona.Domain.dll
-C:\ALaMarona\ALaMarona.Domain\bin\Debug\ALaMarona.Domain.pdb
-C:\ALaMarona\ALaMarona.Domain\bin\Debug\Eg.Core.dll
-C:\ALaMarona\ALaMarona.Domain\obj\Debug\ALaMarona.Domain.dll
-C:\ALaMarona\ALaMarona.Domain\obj\Debug\ALaMarona.Domain.pdb

@@ -1,15 +1,15 @@
-﻿using System.Web.Http;
+﻿using ALaMarona.Core.Controller;
 using ALaMarona.Domain.DTOs;
 using ALaMarona.Domain.Entities;
-using ALaMarona.Core.Controller;
-using ALaMarona.Core.Services;
+using ALaMarona.Domain.Generic;
+using System.Web.Http;
 
 namespace ALaMaronaWebApi.Controllers
 {
     [RoutePrefix("api/Persona")]
     public class PersonaController : GenericController<Persona, long, PersonaDTO>
     {
-        public PersonaController(IGenericService<Persona, long> genericService) : base(genericService)
+        public PersonaController(IGenericBusiness<Persona, long> genericBusiness) : base(genericBusiness)
         {
         }
     }

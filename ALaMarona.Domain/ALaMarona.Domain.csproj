@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Businesses\IDireccionBusiness.cs" />
+    <Compile Include="Businesses\IMovimientoStockBusiness.cs" />
     <Compile Include="DTOs\ColorDTO.cs" />
     <Compile Include="DTOs\DireccionDTO.cs" />
     <Compile Include="DTOs\ImagenDTO .cs" />
@@ -74,7 +76,9 @@
     <Compile Include="Entities\Persona.cs" />
     <Compile Include="Entities\Direccion.cs" />
     <Compile Include="Entities\Producto.cs" />
+    <Compile Include="Generic\IGenericBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IMovimientoStockRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

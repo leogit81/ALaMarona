@@ -2,38 +2,61 @@
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Context;
+using Ninject;
+using Ninject.Web.Common.WebHost;
+using Ninject.Web.WebApi;
 using System;
-using System.Web;
+using System.Reflection;
 using System.Web.Http;
+using System.Web.Http.Dependencies;
 
 namespace ALaMaronaWebApi
 {
-    public class WebApiApplication : System.Web.HttpApplication
+    public class WebApiApplication : NinjectHttpApplication
     {
-        private ISessionFactory getSessionFactory()
+        public static ISessionFactory SessionFactory = CreateSessionFactory();
+
+        public WebApiApplication()
         {
-            return (ISessionFactory)HttpContext.Current.Application["SessionFactory"];
+            this.BeginRequest += new EventHandler(Application_BeginRequest);
+            this.EndRequest += new EventHandler(Application_EndRequest);
         }
 
-        protected void Application_Start()
+        private static ISessionFactory CreateSessionFactory()
         {
-            GlobalConfiguration.Configure(WebApiConfig.Register);
+            var cfg = new Configuration().Configure();
+            return cfg.BuildSessionFactory();
+        }
 
-            var nhConfig = new Configuration().Configure();
-            HttpContext.Current.Application["SessionFactory"] = nhConfig.BuildSessionFactory();
+        /// <summary>
+        /// 
+        /// </summary>
+        protected override void OnApplicationStarted()
+        {
+            base.OnApplicationStarted();
+
+            GlobalConfiguration.Configure(WebApiConfig.Register);
 
             Factory.Instance.ConfigureMapping();
         }
 
+        protected override IKernel CreateKernel()
+        {
+            var kernel = new StandardKernel();
+            kernel.Load(Assembly.GetExecutingAssembly());
+            GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
+            return kernel;
+        }
+
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-            WebSessionContext.Bind(getSessionFactory().OpenSession());
+            WebSessionContext.Bind(SessionFactory.OpenSession());
         }
 
         protected void Application_EndRequest(
             object sender, EventArgs e)
         {
-            ISession session = WebSessionContext.Unbind(getSessionFactory());
+            ISession session = WebSessionContext.Unbind(SessionFactory);
             if (session != null)
             {
                 if (session.Transaction != null &&
