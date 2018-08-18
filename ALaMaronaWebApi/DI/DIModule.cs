@@ -16,7 +16,6 @@ namespace ALaMaronaWebApi.DI
             this.BindDAL();
             //this.BindSessionManager();
             this.Bind<NHibernate.ISessionFactory>().ToMethod(_ => WebApiApplication.SessionFactory).InSingletonScope();
-            this.Bind<Controllers.ICalculator>().To<Controllers.Calculator>();
         }
     }
 }
