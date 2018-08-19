@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Businesses\IProductoBusiness.cs" />
     <Compile Include="Businesses\IDireccionBusiness.cs" />
     <Compile Include="Businesses\IMovimientoStockBusiness.cs" />
     <Compile Include="DTOs\ColorDTO.cs" />

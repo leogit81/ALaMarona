@@ -10,27 +10,27 @@ namespace ALaMarona.Core.Controller
 {
     public class GenericController<T, TId, TDTO>: ApiController where T : Entity<TId>, new() where TDTO: GenericDTO<TId>, new()
     {
-        private readonly IGenericBusiness<T, TId> _genericService;
+        private readonly IGenericBusiness<T, TId> _genericBusiness;
 
         public GenericController(IGenericBusiness<T, TId> genericBusiness)
         {
             //ISessionFactory sessionFactory = (ISessionFactory)HttpContext.Current.Application["SessionFactory"];
             //var repo = new NHibernateRepository<T, TId>(sessionFactory);
-            _genericService = genericBusiness;
+            _genericBusiness = genericBusiness;
         }
 
         [Route("")]
         // GET: api/Producto
         public virtual IEnumerable<TDTO> Get()
         {
-            return _genericService.GetAll().Select(x => Mapper.Map<TDTO>(x));
+            return _genericBusiness.GetAll().Select(x => Mapper.Map<TDTO>(x));
         }
 
         [Route("id")]
         // GET: api/Producto/5
         public virtual TDTO Get(TId id)
         {
-            return Mapper.Map<TDTO>(_genericService.GetById(id));
+            return Mapper.Map<TDTO>(_genericBusiness.GetById(id));
         }
 
         [Route("")]
@@ -39,7 +39,7 @@ namespace ALaMarona.Core.Controller
         public virtual TDTO Post([FromBody]TDTO entityDto)
         {
             var entity = Mapper.Map<T>(entityDto);
-            _genericService.Save(entity);
+            _genericBusiness.Save(entity);
             return Mapper.Map<TDTO>(entity);
         }
 
@@ -48,14 +48,14 @@ namespace ALaMarona.Core.Controller
         public virtual void Put([FromBody]TDTO entityDto)
         {
             var entity = Mapper.Map<T>(entityDto);
-            _genericService.Update(entity);
+            _genericBusiness.Update(entity);
         }
 
         [Route("{id}")]
         // DELETE: api/Producto/5
         public virtual void Delete(TId id)
         {
-            _genericService.Delete(id);
+            _genericBusiness.Delete(id);
         }
     }
 }

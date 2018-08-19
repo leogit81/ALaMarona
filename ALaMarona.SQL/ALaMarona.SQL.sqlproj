@@ -68,7 +68,7 @@
   <ItemGroup>
     <Build Include="dbo\Tables\Color.sql" />
     <Build Include="dbo\Tables\Producto.sql" />
-    <Build Include="dbo\Tables\StockMovimiento.sql" />
+    <Build Include="dbo\Tables\MovimientoStock.sql" />
     <Build Include="dbo\Tables\ImagenProducto.sql" />
     <Build Include="Storage\imagenesProductos.sql" />
     <Build Include="dbo\Tables\Localidad.sql" />

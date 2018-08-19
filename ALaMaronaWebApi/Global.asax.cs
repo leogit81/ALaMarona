@@ -56,17 +56,10 @@ namespace ALaMaronaWebApi
         protected void Application_EndRequest(
             object sender, EventArgs e)
         {
-            ISession session = WebSessionContext.Unbind(SessionFactory);
+            var session = WebSessionContext.Unbind(SessionFactory);
             if (session != null)
             {
-                if (session.Transaction != null &&
-                    session.Transaction.IsActive)
-                {
-                    session.Transaction.Rollback();
-                }
-                else
-                    session.Flush();
-                session.Close();
+                session.Dispose();
             }
         }
     }

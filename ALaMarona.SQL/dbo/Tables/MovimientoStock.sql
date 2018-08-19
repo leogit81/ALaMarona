@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[MovimientoStock] (
-    [id]             BIGINT          NOT NULL,
+    [id]             BIGINT          IDENTITY(1,1) NOT NULL,
     [idProducto]        BIGINT          NOT NULL,
     [fecha]          DATETIME        NOT NULL,
     [cantidad]       INT             NOT NULL,

@@ -4,6 +4,7 @@ using AutoMapper;
 using ALaMarona.Domain.DTOs;
 using System;
 using System.Linq;
+using System.Globalization;
 
 namespace ALaMarona.Core
 {
@@ -43,7 +44,8 @@ namespace ALaMarona.Core
 
                 cfg.CreateMap<MovimientoStock, MovimientoStockDTO>()
                 .ForMember(target => target.IdProducto, opt => opt.MapFrom(x => x.Producto.Id))
-                .ReverseMap().ForMember(dest => dest.Producto, opt => opt.MapFrom(x => new Producto() { Id = x.IdProducto }));
+                .ReverseMap().ForMember(dest => dest.Producto, opt => opt.MapFrom(x => new Producto() { Id = x.IdProducto }))
+                .ForMember(dest => dest.Fecha, opt => opt.MapFrom(x => Convert.ToDateTime(x.Fecha, CultureInfo.CurrentCulture)));
 
                 cfg.CreateMap<Color, ColorDTO>().ReverseMap();
 

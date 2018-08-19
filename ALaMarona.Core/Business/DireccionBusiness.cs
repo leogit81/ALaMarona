@@ -1,7 +1,6 @@
 ﻿using ALaMarona.Core.Business;
 using ALaMarona.Domain.Businesses;
 using ALaMarona.Domain.Entities;
-using ALaMarona.Domain.Repositories;
 using Eg.Core.Data;
 
 namespace ALaMarona.Core.Businesses

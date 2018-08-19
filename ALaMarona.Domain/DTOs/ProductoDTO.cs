@@ -9,6 +9,7 @@ namespace ALaMarona.Domain.DTOs
         public string Descripcion { get; set; }
         public int Talle { get; set; }
         public ColorDTO Color { get; set; }
-        public ISet<ImagenDTO> Imagenes { get; set; }
+        public IList<ImagenDTO> Imagenes { get; set; }
+        public IList<MovimientoStockDTO> MovimientosDeStock { get; set; }
     }
 }
