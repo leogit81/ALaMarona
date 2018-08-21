@@ -107,9 +107,9 @@
   <ItemGroup>
     <Compile Include="ALaMaronaException.cs" />
     <Compile Include="Business\DireccionBusiness.cs" />
-    <Compile Include="Business\MovimientoStockBusiness.cs" />
     <Compile Include="Business\ProductoBusiness.cs" />
     <Compile Include="Controller\GenericController.cs" />
+    <Compile Include="Controller\MovimientoStockController.cs" />
     <Compile Include="Controller\ProductoController.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="IFactory.cs" />

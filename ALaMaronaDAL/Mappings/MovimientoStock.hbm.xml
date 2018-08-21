@@ -6,7 +6,7 @@
     </id>
     <property name="Fecha" not-null="true" />
     <property name="Cantidad" not-null="true" />
-    <property name="PrecioCompra" not-null="true" />
+    <property name="Precio" not-null="true" />
     <many-to-one name="Producto" class="ALaMarona.Domain.Entities.Producto, ALaMarona.Domain" >
       <column name="idProducto"/>
     </many-to-one>
