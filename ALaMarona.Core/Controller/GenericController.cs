@@ -43,8 +43,8 @@ namespace ALaMarona.Core.Controller
             return Mapper.Map<TDTO>(entity);
         }
 
-        [Route("{id}")]
-        // PUT: api/Producto/5
+        [Route("")]
+        // PUT: api/Producto
         public virtual void Put([FromBody]TDTO entityDto)
         {
             var entity = Mapper.Map<T>(entityDto);

@@ -44,8 +44,9 @@ namespace ALaMarona.Core
 
                 cfg.CreateMap<MovimientoStock, MovimientoStockDTO>()
                 .ForMember(target => target.IdProducto, opt => opt.MapFrom(x => x.Producto.Id))
+                .ForMember(target => target.Fecha, opt => opt.MapFrom(x => x.Fecha.ToLocalTime().ToString("O")))
                 .ReverseMap().ForMember(dest => dest.Producto, opt => opt.MapFrom(x => new Producto() { Id = x.IdProducto }))
-                .ForMember(dest => dest.Fecha, opt => opt.MapFrom(x => Convert.ToDateTime(x.Fecha, CultureInfo.CurrentCulture)));
+                .ForMember(dest => dest.Fecha, opt => opt.MapFrom(x => parseDate(x.Fecha)));
 
                 cfg.CreateMap<Color, ColorDTO>().ReverseMap();
 
@@ -83,6 +84,16 @@ namespace ALaMarona.Core
                     Alias = s.Alias
                 }));
             });
+        }
+
+        private DateTime parseDate(string fecha)
+        {
+            DateTime f;
+            if (DateTime.TryParse(fecha, out f))
+            {
+                return f.ToUniversalTime();
+            }
+            return new DateTime();
         }
     }
 }

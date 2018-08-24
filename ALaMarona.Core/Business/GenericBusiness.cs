@@ -29,7 +29,7 @@ namespace ALaMarona.Core.Business
 
         public virtual T GetById(TId id)
         {
-            if (id == null)
+            if (default(TId).Equals(id))
             {
                 throw new ArgumentNullException(nameof(id));
             }

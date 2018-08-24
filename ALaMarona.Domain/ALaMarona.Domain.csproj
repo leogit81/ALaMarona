@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Businesses\IProductoBusiness.cs" />
     <Compile Include="Businesses\IDireccionBusiness.cs" />
+    <Compile Include="Contracts\UpdateProductRequest.cs" />
     <Compile Include="DTOs\ColorDTO.cs" />
     <Compile Include="DTOs\DireccionDTO.cs" />
     <Compile Include="DTOs\ImagenDTO .cs" />

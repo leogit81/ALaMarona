@@ -1,31 +1,57 @@
 ﻿using ALaMarona.Domain.Businesses;
+using ALaMarona.Domain.Contracts;
 using ALaMarona.Domain.Entities;
+using ALaMarona.Domain.Generic;
 using Eg.Core.Data;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ALaMarona.Core.Business
 {
-    public class ProductoBusiness : GenericBusiness<Producto, long>, IProductoBusiness
+    public class ProductoBusiness : IProductoBusiness
     {
-        public ProductoBusiness(IRepository<Producto, long> repo) : base(repo)
+        protected IRepository<Producto, long> repository;
+        private readonly IGenericBusiness<Color, long> colorBusiness;
+
+        public ProductoBusiness(IRepository<Producto, long> repo, IGenericBusiness<Color, long> colorBus)
         {
+            repository = repo;
+            colorBusiness = colorBus;
         }
 
-        public override Producto Save(Producto entity)
+        public void Delete(long id)
+        {
+            var entity = repository.FirstOrDefault(e => e.Id.Equals(id));
+            repository.Remove(entity);
+        }
+
+        public IList<Producto> GetAll()
+        {
+            return repository.ToList();
+        }
+
+        public Producto GetById(long id)
+        {
+            return repository.FirstOrDefault(x => id.Equals(x.Id));
+        }
+
+        public Producto Save(Producto entity)
         {
             foreach(var m in entity.MovimientosDeStock)
             {
                 m.Producto = entity;
             }
-            return base.Save(entity);
+            repository.Add(entity);
+            return entity;
         }
 
-        public override void Update(Producto entity)
+        public void Update(UpdateProductRequest updateRequest)
         {
-            foreach (var m in entity.MovimientosDeStock)
-            {
-                m.Producto = entity;
-            }
-            base.Update(entity);
+            var producto = repository.FirstOrDefault(x => x.Id == updateRequest.IdProducto);
+            producto.Descripcion = updateRequest.Descripcion;
+            producto.Talle = updateRequest.Talle;
+            producto.Color = colorBusiness.GetById(updateRequest.IdColor);
+            repository.Update(producto);
         }
     }
 }
