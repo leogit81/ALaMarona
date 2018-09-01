@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace ALaMarona.Core.Controller
+namespace ALaMarona.Core.Generic.Controller
 {
     public class GenericController<T, TId, TDTO>: ApiController where T : Entity<TId>, new() where TDTO: GenericDTO<TId>, new()
     {
@@ -14,8 +14,6 @@ namespace ALaMarona.Core.Controller
 
         public GenericController(IGenericBusiness<T, TId> genericBusiness)
         {
-            //ISessionFactory sessionFactory = (ISessionFactory)HttpContext.Current.Application["SessionFactory"];
-            //var repo = new NHibernateRepository<T, TId>(sessionFactory);
             _genericBusiness = genericBusiness;
         }
 

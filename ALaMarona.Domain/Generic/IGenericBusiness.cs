@@ -6,8 +6,8 @@ namespace ALaMarona.Domain.Generic
     {
         IList<T> GetAll();
         T GetById(TId id);
-        T Save(T entityDto);
-        void Update(T entityDto);
+        T Save(T entity);
+        void Update(T entity);
         void Delete(TId id);
     }
 }

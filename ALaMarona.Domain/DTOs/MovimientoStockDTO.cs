@@ -4,9 +4,6 @@ namespace ALaMarona.Domain.DTOs
 {
     public class MovimientoStockDTO : GenericDTO<long>
     {
-        public MovimientoStockDTO() {
-        }
-
         public string Fecha { get; set; }
         /// <summary>
         /// Cantidad positiva para compras. Cantidad negativa para ventas.

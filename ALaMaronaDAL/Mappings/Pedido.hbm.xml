@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="ALaMarona.Domain" namespace="ALaMarona.Domain.Entities">
+  <class name="Pedido">
+    <id name="Id">
+      <generator class="identity"></generator>
+    </id>
+    <property name="Fecha" not-null="true" />
+    <set cascade="all-delete-orphan" inverse="true" name="Detalles">
+      <key column="IdPedido"/>
+      <one-to-many class="ALaMarona.Domain.Entities.DetallePedido, ALaMarona.Domain"/>
+    </set>
+  </class>
+</hibernate-mapping>

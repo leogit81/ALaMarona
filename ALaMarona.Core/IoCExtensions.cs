@@ -10,6 +10,7 @@ namespace ALaMarona.Core.IoCExtension
         public static void BindBusinesses(this NinjectModule iocModule){
             iocModule.Bind(typeof(IGenericBusiness<,>)).To(typeof(GenericBusiness<,>));
             iocModule.Bind<IProductoBusiness>().To<ProductoBusiness>();
+            iocModule.Bind<IPedidoBusiness>().To<PedidoBusiness>();
         }
     }
 }

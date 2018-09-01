@@ -107,11 +107,15 @@
   <ItemGroup>
     <Compile Include="ALaMaronaException.cs" />
     <Compile Include="Business\DireccionBusiness.cs" />
+    <Compile Include="Business\PedidoBusiness.cs" />
     <Compile Include="Business\ProductoBusiness.cs" />
-    <Compile Include="Controller\GenericController.cs" />
+    <Compile Include="Generic\Controller\RestrictedUpdateController.cs" />
+    <Compile Include="Generic\Controller\GenericController.cs" />
+    <Compile Include="Controller\PedidoController.cs" />
     <Compile Include="Controller\MovimientoStockController.cs" />
     <Compile Include="Controller\ProductoController.cs" />
     <Compile Include="Factory.cs" />
+    <Compile Include="Generic\RestrictedUpdateBusiness.cs" />
     <Compile Include="IFactory.cs" />
     <Compile Include="IoCExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

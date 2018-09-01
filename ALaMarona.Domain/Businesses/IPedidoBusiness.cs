@@ -4,7 +4,7 @@ using ALaMarona.Domain.Generic;
 
 namespace ALaMarona.Domain.Businesses
 {
-    public interface IProductoBusiness: IRestrictedUpdateBusiness<Producto, long, UpdateProductRequest>
+    public interface IPedidoBusiness : IRestrictedUpdateBusiness<Pedido, long, UpdatePedidoRequest>
     {
     }
 }

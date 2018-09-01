@@ -53,6 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Businesses\IPedidoBusiness.cs" />
+    <Compile Include="Contracts\UpdateDetallePedidoRequest.cs" />
+    <Compile Include="Contracts\UpdatePedidoRequest.cs" />
+    <Compile Include="Generic\IRestrictedUpdateBusiness.cs" />
     <Compile Include="Businesses\IProductoBusiness.cs" />
     <Compile Include="Businesses\IDireccionBusiness.cs" />
     <Compile Include="Contracts\UpdateProductRequest.cs" />
@@ -60,9 +64,11 @@
     <Compile Include="DTOs\DireccionDTO.cs" />
     <Compile Include="DTOs\ImagenDTO .cs" />
     <Compile Include="DTOs\LocalidadDTO.cs" />
+    <Compile Include="DTOs\DetallePedidoDTO.cs" />
     <Compile Include="DTOs\MovimientoStockDTO.cs" />
     <Compile Include="DTOs\PersonaDTO.cs" />
     <Compile Include="DTOs\PaisDTO.cs" />
+    <Compile Include="DTOs\PedidoDTO.cs" />
     <Compile Include="DTOs\ProductoDTO.cs" />
     <Compile Include="DTOs\ProvinciaDTO.cs" />
     <Compile Include="Entities\Color.cs" />
@@ -72,12 +78,15 @@
     <Compile Include="Entities\Localidad.cs" />
     <Compile Include="Entities\Documento.cs" />
     <Compile Include="Entities\MovimientoStock.cs" />
+    <Compile Include="Entities\DetallePedido.cs" />
+    <Compile Include="Entities\Pedido.cs" />
     <Compile Include="Entities\Provincia.cs" />
     <Compile Include="Entities\Pais.cs" />
     <Compile Include="Entities\Persona.cs" />
     <Compile Include="Entities\Direccion.cs" />
     <Compile Include="Entities\Producto.cs" />
     <Compile Include="Generic\IGenericBusiness.cs" />
+    <Compile Include="Generic\IUpdateRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

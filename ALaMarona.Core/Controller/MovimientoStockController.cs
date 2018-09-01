@@ -1,4 +1,4 @@
-﻿using ALaMarona.Core.Controller;
+﻿using ALaMarona.Core.Generic.Controller;
 using ALaMarona.Domain.DTOs;
 using ALaMarona.Domain.Entities;
 using ALaMarona.Domain.Generic;

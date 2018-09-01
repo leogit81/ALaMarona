@@ -48,6 +48,13 @@ namespace ALaMarona.Core
                 .ReverseMap().ForMember(dest => dest.Producto, opt => opt.MapFrom(x => new Producto() { Id = x.IdProducto }))
                 .ForMember(dest => dest.Fecha, opt => opt.MapFrom(x => parseDate(x.Fecha)));
 
+                cfg.CreateMap<Pedido, PedidoDTO>()
+                .ForMember(target => target.Fecha, opt => opt.MapFrom(x => x.Fecha.ToLocalTime().ToString("O")))
+                .ReverseMap()
+                .ForMember(dest => dest.Fecha, opt => opt.MapFrom(x => parseDate(x.Fecha)));
+
+                cfg.CreateMap<DetallePedido, DetallePedidoDTO>().ReverseMap();
+
                 cfg.CreateMap<Color, ColorDTO>().ReverseMap();
 
                 cfg.CreateMap<Direccion, DireccionDTO>().ReverseMap();
