@@ -5,5 +5,6 @@
     [Precio] DECIMAL(19, 4) NOT NULL, 
     [Cantidad] INT NOT NULL, 
     [IdPedido] BIGINT NOT NULL,
-	CONSTRAINT FK_DetallePedido_Pedido FOREIGN KEY([IdPedido]) REFERENCES Pedido(Id)
+	[IdMovimientoStock] BIGINT NULL, 
+    CONSTRAINT FK_DetallePedido_Pedido FOREIGN KEY([IdPedido]) REFERENCES Pedido(Id)
 )

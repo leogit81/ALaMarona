@@ -8,10 +8,14 @@
     <property name="Precio" not-null="true" />
     <property name="IdProducto" not-null="true" insert="false" update="false"/>
     <many-to-one name="Producto" class="ALaMarona.Domain.Entities.Producto, ALaMarona.Domain" not-null="true">
-      <column name="idProducto"/>
+      <column name="IdProducto"/>
     </many-to-one>
     <many-to-one name="Pedido" class="ALaMarona.Domain.Entities.Pedido, ALaMarona.Domain" not-null="true">
-      <column name="idPedido"/>
+      <column name="IdPedido"/>
+    </many-to-one>
+    <many-to-one name="MovimientoStock" class="ALaMarona.Domain.Entities.MovimientoStock, ALaMarona.Domain" not-null="false"
+                 cascade="all">
+      <column name="IdMovimientoStock"/>
     </many-to-one>
   </class>
 </hibernate-mapping>

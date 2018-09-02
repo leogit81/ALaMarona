@@ -36,6 +36,7 @@ namespace ALaMarona.Core.Business
             {
                 r.DetallePedido.Pedido = entity;
                 r.DetallePedido.Producto = r.Producto;
+                r.DetallePedido.MovimientoStock = new MovimientoStock(r.DetallePedido);
             }
             repository.Add(entity);
             return entity;
@@ -73,6 +74,11 @@ namespace ALaMarona.Core.Business
                 if (jr.DetallePedido.Id == 0)
                 {
                     pedido.Detalles.Add(jr.DetallePedido);
+                    jr.DetallePedido.MovimientoStock = new MovimientoStock(jr.DetallePedido);
+                }
+                else
+                {
+                    jr.DetallePedido.MovimientoStock?.Update(jr.DetallePedido);
                 }
             }
 

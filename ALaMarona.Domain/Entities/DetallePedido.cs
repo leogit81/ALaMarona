@@ -9,5 +9,6 @@ namespace ALaMarona.Domain.Entities
         public virtual decimal Precio { get; set; }
         public virtual int Cantidad { get; set; }
         public virtual Pedido Pedido { get; set; }
+        public virtual MovimientoStock MovimientoStock { get; set; }
     }
 }
