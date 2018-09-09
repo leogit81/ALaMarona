@@ -4,6 +4,7 @@
     <id name="Id">
       <generator class="identity"></generator>
     </id>
+    <discriminator column="PersonType" type="String"/>
     <component name="Nombre" class="ALaMarona.Domain.Entities.Nombre, ALaMarona.Domain">
       <property name="Primero" column="PrimerNombre"/>
       <property name="Segundo" column="SegundoNombre"/>
@@ -28,8 +29,11 @@
       <column name="IdLugarNacimiento"/>
     </many-to-one>
 
-    <component name="EstadoCivil" class="ALaMarona.Domain.Entities.EstadoCivil, ALaMarona.Domain" >
-      <property name="Descripcion" column="EstadoCivil"/>
-    </component>
+    <property name="EstadoCivil" access="field.lowercase"/>
+
+    <subclass name="Cliente" discriminator-value="CLIENTE">
+      <property name="Codigo"/>
+      <property name="EMail"/>
+    </subclass>
   </class>
 </hibernate-mapping>

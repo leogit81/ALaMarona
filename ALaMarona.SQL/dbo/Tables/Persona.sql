@@ -12,7 +12,11 @@
     [IdDomicilio] INT NOT NULL, 
     [IdLugarNacimiento] INT NOT NULL, 
     [EstadoCivil] NVARCHAR(30) NOT NULL, 
+    [PersonType] NVARCHAR(50) NOT NULL, 
+    [EMail] NVARCHAR(250) NULL, 
+    [Codigo] NVARCHAR(8) NULL, 
     CONSTRAINT [FK_Persona_Domicilio] FOREIGN KEY ([IdDomicilio]) REFERENCES [Direccion]([Id]),
 	CONSTRAINT [FK_Persona_LugarNacimiento] FOREIGN KEY ([IdLugarNacimiento]) REFERENCES [Direccion]([Id]),
-	CONSTRAINT [UK_DOCUMENTO] UNIQUE(TipoDocumento, NumeroDocumento)
+	CONSTRAINT [UK_PERSONA_DOCUMENTO] UNIQUE(TipoDocumento, NumeroDocumento),
+	CONSTRAINT [UK_PERSONA_CODIGO] UNIQUE(Codigo)
 )

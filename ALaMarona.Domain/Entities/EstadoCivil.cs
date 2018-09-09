@@ -2,11 +2,15 @@
 
 namespace ALaMarona.Domain.Entities
 {
-    public class EstadoCivil
+    //TODO: ESTO DEBERIA IR A UNA TABLA A LA BASE DE DATOS
+    public static class EstadoCivil
     {
         private static IList<string> tipos;
 
-        public string Descripcion { get; set; }
+        public static bool IsValid(string estadoCivil)
+        {
+            return tipos.Contains(estadoCivil);
+        }
 
         static EstadoCivil()
         {
@@ -16,11 +20,6 @@ namespace ALaMarona.Domain.Entities
             tipos.Add("Casado/a");
             tipos.Add("Viudo/a");
             tipos.Add("Divorciado/a");
-        }
-
-        public static IList<string> GetCodigos()
-        {
-            return tipos;
         }
 
         public static string Soltero

@@ -1,4 +1,4 @@
-﻿using ALaMarona.Core.IoCExtension;
+﻿using ALaMarona.Core.DIExtension;
 using ALaMaronaDAL.IoCExtension;
 using Ninject.Modules;
 

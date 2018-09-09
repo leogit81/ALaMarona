@@ -6,12 +6,12 @@ namespace ALaMarona.Domain.DTOs
     public class ProvinciaDTO : GenericDTO<long>
     {
         public ProvinciaDTO() {
-            Localidades = new HashSet<LocalidadDTO>();
+            IdLocalidades = new List<int>();
         }
 
         public string Nombre { get; set; }
 
-        public ISet<LocalidadDTO> Localidades { get; set; }
-        public PaisDTO Pais { get; set; }
+        public IList<int> IdLocalidades { get; set; }
+        public int IdPais { get; set; }
     }
 }

@@ -54,11 +54,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Businesses\IPedidoBusiness.cs" />
+    <Compile Include="Contracts\CreateDireccionRequest.cs" />
+    <Compile Include="Contracts\CreatePersonaRequest.cs" />
+    <Compile Include="Contracts\CreateClienteRequest.cs" />
+    <Compile Include="Contracts\UpdateClienteRequest.cs" />
     <Compile Include="Contracts\UpdateDetallePedidoRequest.cs" />
     <Compile Include="Contracts\UpdatePedidoRequest.cs" />
+    <Compile Include="DTOs\ClienteDTO.cs" />
+    <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Generic\IRestrictedUpdateBusiness.cs" />
     <Compile Include="Businesses\IProductoBusiness.cs" />
-    <Compile Include="Businesses\IDireccionBusiness.cs" />
+    <Compile Include="Businesses\IClienteBusiness.cs" />
     <Compile Include="Contracts\UpdateProductRequest.cs" />
     <Compile Include="DTOs\ColorDTO.cs" />
     <Compile Include="DTOs\DireccionDTO.cs" />

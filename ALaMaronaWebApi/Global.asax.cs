@@ -1,4 +1,4 @@
-﻿using ALaMarona.Core;
+﻿using ALaMarona.Core.AMapper;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Context;
@@ -37,7 +37,7 @@ namespace ALaMaronaWebApi
 
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
-            Factory.Instance.ConfigureMapping();
+            MappersConfigurator.ConfigureMapping();
         }
 
         protected override IKernel CreateKernel()

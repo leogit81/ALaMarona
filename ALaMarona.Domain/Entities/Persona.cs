@@ -3,7 +3,7 @@ using System;
 
 namespace ALaMarona.Domain.Entities
 {
-    public class Persona: Entity<long>
+    public class Persona : Entity<long>
     {
         public virtual Nombre Nombre { get; set; }
         public virtual Direccion Domicilio { get; set; }
@@ -11,6 +11,20 @@ namespace ALaMarona.Domain.Entities
         public virtual Documento Documento { get; set; }
         public virtual DateTime FechaNacimiento { get; set; }
         public virtual Direccion LugarNacimiento { get; set; }
-        public virtual EstadoCivil EstadoCivil { get; set; }
+        protected string estadocivil;
+        public virtual string EstadoCivil
+        {
+            get
+            {
+                return estadocivil;
+            }
+            set
+            {
+                if (Entities.EstadoCivil.IsValid(value))
+                {
+                    estadocivil = value;
+                }
+            }
+        }
     }
 }
