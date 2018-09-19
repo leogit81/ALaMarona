@@ -8,22 +8,22 @@
     <component name="Nombre" class="ALaMarona.Domain.Entities.Nombre, ALaMarona.Domain">
       <property name="Primero" column="PrimerNombre"/>
       <property name="Segundo" column="SegundoNombre"/>
-      <property name="Apellido" column="Apellido" not-null="true"/>
+      <property name="Apellido" column="Apellido"/>
       <property name="Alias" column="Alias"/>
     </component>
     
-    <many-to-one name="Domicilio" class="ALaMarona.Domain.Entities.Direccion, ALaMarona.Domain" not-null="true" cascade="save-update">
+    <many-to-one name="Domicilio" class="ALaMarona.Domain.Entities.Direccion, ALaMarona.Domain" cascade="save-update">
       <column name="IdDomicilio"/>
     </many-to-one>
 
-    <property name="Telefono" not-null="false" />
+    <property name="Telefono"/>
     
     <component name="Documento" class="ALaMarona.Domain.Entities.Documento, ALaMarona.Domain" >
-      <property name="Tipo" column="TipoDocumento" not-null="true"/>
-      <property name="Numero" column="NumeroDocumento" not-null="true"/>
+      <property name="Tipo" column="TipoDocumento"/>
+      <property name="Numero" column="NumeroDocumento"/>
       </component>
     
-    <property name="FechaNacimiento" not-null="true" />
+    <property name="FechaNacimiento"/>
 
     <many-to-one name="LugarNacimiento" class="ALaMarona.Domain.Entities.Direccion, ALaMarona.Domain" cascade="save-update">
       <column name="IdLugarNacimiento"/>

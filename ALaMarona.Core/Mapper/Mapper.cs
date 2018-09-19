@@ -7,6 +7,9 @@ namespace ALaMarona.Core.AMapper
     {
         public static Direccion MapDireccion(this CreateDireccionRequest direccionRequest)
         {
+            if (direccionRequest == null)
+                return null;
+
             return new Direccion()
             {
                 Altura = direccionRequest.Altura,
@@ -22,6 +25,9 @@ namespace ALaMarona.Core.AMapper
 
         public static Nombre MapNombre(this CreatePersonaRequest request)
         {
+            if (request == null)
+                return null;
+
             return new Nombre()
             {
                 Primero = request.PrimerNombre,

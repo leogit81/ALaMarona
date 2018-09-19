@@ -16,12 +16,12 @@ namespace ALaMarona.Core.AMapper
 
                 cfg.CreateMap<MovimientoStock, MovimientoStockDTO>()
                 .ForMember(target => target.IdProducto, opt => opt.MapFrom(x => x.Producto.Id))
-                .ForMember(target => target.Fecha, opt => opt.MapFrom(x => x.Fecha.ToLocalTime()))
+                .ForMember(target => target.Fecha, opt => opt.MapFrom(x => x.Fecha.ToLocalTimePreserveTimeZone()))
                 .ReverseMap().ForMember(dest => dest.Producto, opt => opt.MapFrom(x => new Producto() { Id = x.IdProducto }))
                 .ForMember(dest => dest.Fecha, opt => opt.MapFrom(x => DateTimeHelper.ParseDate(x.Fecha)));
 
                 cfg.CreateMap<Pedido, PedidoDTO>()
-                .ForMember(target => target.Fecha, opt => opt.MapFrom(x => x.Fecha.ToLocalTime()))
+                .ForMember(target => target.Fecha, opt => opt.MapFrom(x => x.Fecha.ToLocalTimePreserveTimeZone()))
                 .ReverseMap()
                 .ForMember(dest => dest.Fecha, opt => opt.MapFrom(x => DateTimeHelper.ParseDate(x.Fecha)));
 
@@ -42,7 +42,7 @@ namespace ALaMarona.Core.AMapper
                 .ReverseMap();
 
                 cfg.CreateMap<Persona, PersonaDTO>()
-                .ForMember(s => s.FechaNacimiento, t => t.MapFrom(s => s.FechaNacimiento.ToLocalTime()))
+                .ForMember(s => s.FechaNacimiento, t => t.MapFrom(s => s.FechaNacimiento.ToLocalTimePreserveTimeZone()))
                 .ForMember(s => s.TipoDocumento, t => t.MapFrom(s => s.Documento.Tipo))
                 .ForMember(s => s.NumeroDocumento, t => t.MapFrom(s => s.Documento.Numero))
                 .ForMember(s => s.EstadoCivil, t => t.MapFrom(s => s.EstadoCivil))
@@ -53,7 +53,7 @@ namespace ALaMarona.Core.AMapper
                 .Include<Cliente, ClienteDTO>();
 
                 cfg.CreateMap<PersonaDTO, Persona>()
-                .ForMember(s => s.FechaNacimiento, t => t.MapFrom(s => DateTimeHelper.ParseDate(s.FechaNacimiento)))
+                .ForMember(s => s.FechaNacimiento, t => t.MapFrom(s => DateTimeHelper.ParseDateNullable(s.FechaNacimiento)))
                 .ForMember(s => s.Documento, t => t.MapFrom(s => new Documento()
                 {
                     Numero = s.NumeroDocumento,
