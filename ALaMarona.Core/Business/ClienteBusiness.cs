@@ -1,13 +1,13 @@
-﻿using ALaMarona.Core.Business;
+﻿using ALaMarona.Core.AMapper;
+using ALaMarona.Core.Business;
 using ALaMarona.Core.Helpers;
-using ALaMarona.Core.AMapper;
 using ALaMarona.Domain.Businesses;
 using ALaMarona.Domain.Contracts;
 using ALaMarona.Domain.Entities;
 using Eg.Core.Data;
-using System.Linq;
-using System.Text.RegularExpressions;
 using System;
+using System.Linq;
+using System.Net.Mail;
 
 namespace ALaMarona.Core.Businesses
 {
@@ -99,26 +99,19 @@ namespace ALaMarona.Core.Businesses
 
         private bool ValidateEMailAddress(CreateClienteRequest createClienteRequest)
         {
-            if (!string.IsNullOrWhiteSpace(createClienteRequest.EMail))
+            try
             {
-                var regex = new Regex(@"^(?("")("".+?(?<!\\)""@) | (([0 - 9a - z]((\.(? !\.)) |[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$",
-                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
-                try
-                {
-                    if (!regex.IsMatch(createClienteRequest.EMail))
-                    {
-                        return false;
-                    }
-                }
-                catch (RegexMatchTimeoutException)
-                {
-                    return false;
-                }
+                MailAddress mailAddress = new MailAddress(createClienteRequest.EMail);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
 
-                if (repository.Contains(x => x.EMail.Equals(createClienteRequest.EMail, System.StringComparison.InvariantCultureIgnoreCase)))
-                {
-                    return false;
-                }
+            if (repository.Contains(x => x.Id != createClienteRequest.Id
+                && createClienteRequest.EMail.Equals(x.EMail, System.StringComparison.InvariantCultureIgnoreCase)))
+            {
+                return false;
             }
 
             return true;

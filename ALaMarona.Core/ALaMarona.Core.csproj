@@ -110,6 +110,7 @@
     <Compile Include="Business\PedidoBusiness.cs" />
     <Compile Include="Business\ProductoBusiness.cs" />
     <Compile Include="Controller\ClienteController.cs" />
+    <Compile Include="DI\DIContainer.cs" />
     <Compile Include="Generic\Controller\BaseApiController.cs" />
     <Compile Include="Generic\Controller\RestrictedUpdateController.cs" />
     <Compile Include="Generic\Controller\GenericController.cs" />
@@ -119,7 +120,7 @@
     <Compile Include="Mapper\MappersConfigurator.cs" />
     <Compile Include="Generic\RestrictedUpdateBusiness.cs" />
     <Compile Include="Helpers\DateTimeHelper.cs" />
-    <Compile Include="DIExtensions.cs" />
+    <Compile Include="DI\DIExtensions.cs" />
     <Compile Include="Mapper\Mapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Business\GenericBusiness.cs" />

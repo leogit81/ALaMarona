@@ -14,6 +14,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALaMaronaWebApi", "ALaMaronaWebApi\ALaMaronaWebApi.csproj", "{21DA968B-05C9-47DF-83AF-6868C19CB1D0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALaMaronaOwinSelfHost", "ALaMaronaOwinSelfHost\ALaMaronaOwinSelfHost.csproj", "{514CC28D-8E77-464A-8257-A8557FC0743D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8F5FFDC1-824C-4CC2-A2D0-9EF79A22642A} = {8F5FFDC1-824C-4CC2-A2D0-9EF79A22642A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,5 @@
 ﻿using Microsoft.Owin.Hosting;
 using System;
-using System.Net.Http;
 
 namespace ALaMaronaOwinSelfHost
 {
@@ -8,18 +7,13 @@ namespace ALaMaronaOwinSelfHost
     {
         static void Main()
         {
-            string baseAddress = "http://localhost:9000/";
+            string port = "9000";
+            string baseAddress = "http://localhost:{0}/";
 
             // Start OWIN host 
-            using (WebApp.Start<Startup>(url: baseAddress))
+            using (WebApp.Start<Startup>(url: string.Format(baseAddress, port)))
             {
-                // Create HttpCient and make a request to api/values 
-                HttpClient client = new HttpClient();
-
-                var response = client.GetAsync(baseAddress + "api/values").Result;
-
-                Console.WriteLine(response);
-                Console.WriteLine(response.Content.ReadAsStringAsync().Result);
+                Console.WriteLine($"A La Marona Owin Self Host server started on port {port}.");
                 Console.ReadLine();
             }
         }

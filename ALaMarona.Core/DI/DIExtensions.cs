@@ -4,7 +4,7 @@ using ALaMarona.Domain.Businesses;
 using ALaMarona.Domain.Generic;
 using Ninject.Modules;
 
-namespace ALaMarona.Core.DIExtension
+namespace ALaMarona.Core.DI
 {
     public static class DIExtensions
     {

@@ -2,7 +2,7 @@
 using ALaMaronaDAL.IoCExtension;
 using Ninject.Modules;
 
-namespace ALaMaronaWebApi.DI
+namespace ALaMaronaOwinSelfHost.DI
 {
     public class DIModule : NinjectModule
     {
@@ -14,7 +14,6 @@ namespace ALaMaronaWebApi.DI
         {
             this.BindBusinesses();
             this.BindDAL();
-            this.Bind<NHibernate.ISessionFactory>().ToMethod(_ => WebApiApplication.SessionFactory).InSingletonScope();
         }
     }
 }
