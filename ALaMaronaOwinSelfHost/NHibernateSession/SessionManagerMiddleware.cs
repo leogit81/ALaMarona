@@ -62,16 +62,4 @@ namespace ALaMaronaOwinSelfHost
             }
         }
     }
-
-    public class FailMiddleware : OwinMiddleware
-    {
-        public FailMiddleware(OwinMiddleware next) : base(next)
-        {
-        }
-
-        public override Task Invoke(IOwinContext context)
-        {
-            throw new NotImplementedException();
-        }
-    }
 }
