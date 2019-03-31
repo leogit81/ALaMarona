@@ -3,7 +3,7 @@ using ALaMaronaManager.DI;
 
 namespace ALaMaronaManager
 {
-    public class ClienteFormContext: FormContext
+    public class ClienteFormContext: IFormContext
     {
         public IClienteBusiness ClienteBus { get; protected set; }
 

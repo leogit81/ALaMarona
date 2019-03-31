@@ -1,6 +1,6 @@
 ﻿namespace ALaMaronaManager.DI
 {
-    public class FormContext
+    public interface IFormContext
     {
     }
 }

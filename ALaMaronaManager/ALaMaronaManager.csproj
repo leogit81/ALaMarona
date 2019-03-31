@@ -103,7 +103,7 @@
     </Compile>
     <Compile Include="ClienteFormContext.cs" />
     <Compile Include="DI\DIModule.cs" />
-    <Compile Include="DI\FormContext.cs" />
+    <Compile Include="DI\IFormContext.cs" />
     <Compile Include="DI\SessionFactoryModule.cs" />
     <Compile Include="IALaMaronaManagerFactory.cs" />
     <Compile Include="Program.cs" />
