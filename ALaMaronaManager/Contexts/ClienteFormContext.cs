@@ -1,9 +1,8 @@
 ﻿using ALaMarona.Domain.Businesses;
-using ALaMaronaManager.DI;
 
 namespace ALaMaronaManager
 {
-    public class ClienteFormContext: IFormContext
+    public class ClienteFormContext
     {
         public IClienteBusiness ClienteBus { get; protected set; }
 

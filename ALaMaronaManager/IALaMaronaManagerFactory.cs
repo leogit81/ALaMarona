@@ -1,9 +1,8 @@
-﻿using ALaMaronaManager.DI;
-
-namespace ALaMaronaManager
+﻿namespace ALaMaronaManager
 {
     public interface IALaMaronaManagerFactory
     {
         ClienteFormContext CrearClienteFormContext();
+        PedidoFormContext CrearPedidoFormContext();
     }
 }

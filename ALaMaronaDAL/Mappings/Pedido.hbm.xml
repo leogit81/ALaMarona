@@ -5,6 +5,9 @@
       <generator class="identity"></generator>
     </id>
     <property name="Fecha" not-null="true" />
+    <many-to-one name="Cliente" class="ALaMarona.Domain.Entities.Cliente, ALaMarona.Domain" >
+      <column name="IdCliente"/>
+    </many-to-one>
     <set cascade="all-delete-orphan" inverse="true" name="Detalles">
       <key column="IdPedido"/>
       <one-to-many class="ALaMarona.Domain.Entities.DetallePedido, ALaMarona.Domain"/>

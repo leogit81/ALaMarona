@@ -2,10 +2,8 @@
 using ALaMarona.Domain.Businesses;
 using ALaMarona.Domain.Contracts;
 using ALaMarona.Domain.Entities;
-using ALaMarona.Domain.Generic;
 using Eg.Core.Data;
 using System.Linq;
-using System;
 
 namespace ALaMarona.Core.Business
 {

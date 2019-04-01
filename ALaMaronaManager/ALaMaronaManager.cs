@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ALaMaronaManager.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace ALaMaronaManager
@@ -17,6 +18,11 @@ namespace ALaMaronaManager
         private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new BuscarCliente(_factory.CrearClienteFormContext());
+        }
+
+        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Pedidos(_factory.CrearPedidoFormContext());
         }
     }
 }

@@ -1,9 +1,7 @@
-﻿using ALaMarona.Core.Businesses;
-using ALaMarona.Domain.Businesses;
+﻿using ALaMarona.Core.DI;
 using ALaMaronaDAL.IoCExtension;
 using NHibernate;
 using Ninject;
-using Ninject.Extensions.ContextPreservation;
 using Ninject.Extensions.Factory;
 using Ninject.Extensions.NamedScope;
 using Ninject.Modules;
@@ -23,7 +21,10 @@ namespace ALaMaronaManager.DI
             const string FormNamedScope = "Form";
 
             this.Bind<ClienteFormContext>().ToSelf().DefinesNamedScope(FormNamedScope);
-            this.Bind<IClienteBusiness>().To<ClienteBusiness>().InNamedScope(FormNamedScope);
+            this.Bind<PedidoFormContext>().ToSelf().DefinesNamedScope(FormNamedScope);
+
+            this.BindBusinessesNamedScoped(FormNamedScope);
+
             // Bind the NHibernate-ISession 
             this.Kernel.Bind<ISession>().ToMethod(
                 (context) =>

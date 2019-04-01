@@ -1,5 +1,6 @@
 ﻿CREATE TABLE [dbo].[Pedido]
 (
 	[Id] BIGINT NOT NULL PRIMARY KEY IDENTITY(1,1), 
-    [Fecha] DATETIME NOT NULL
+    [Fecha] DATETIME NOT NULL, 
+    [IdCliente] BIGINT NULL
 )

@@ -41,6 +41,10 @@
       <HintPath>..\packages\Castle.Core.4.2.0\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Eg.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Eg.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\Iesi.Collections.4.0.4\lib\net461\Iesi.Collections.dll</HintPath>
       <Private>True</Private>
@@ -95,24 +99,34 @@
     <Compile Include="ALaMaronaManager.Designer.cs">
       <DependentUpon>ALaMaronaManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="BuscarCliente.cs">
+    <Compile Include="Forms\BuscarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuscarCliente.Designer.cs">
+    <Compile Include="Forms\BuscarCliente.Designer.cs">
       <DependentUpon>BuscarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClienteFormContext.cs" />
+    <Compile Include="Forms\Pedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pedidos.Designer.cs">
+      <DependentUpon>Pedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\PedidoFormContext.cs" />
+    <Compile Include="Contexts\ClienteFormContext.cs" />
     <Compile Include="DI\DIModule.cs" />
-    <Compile Include="DI\IFormContext.cs" />
     <Compile Include="DI\SessionFactoryModule.cs" />
     <Compile Include="IALaMaronaManagerFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionManager.cs" />
     <EmbeddedResource Include="ALaMaronaManager.resx">
       <DependentUpon>ALaMaronaManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BuscarCliente.resx">
+    <EmbeddedResource Include="Forms\BuscarCliente.resx">
       <DependentUpon>BuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pedidos.resx">
+      <DependentUpon>Pedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

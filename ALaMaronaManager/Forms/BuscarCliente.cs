@@ -20,9 +20,7 @@ namespace ALaMaronaManager
 
             _clienteFormCtx = clienteFormCtx;
 
-            ISession session = (ISession)DIContainer.Kernel.GetService(typeof(ISession));
-            CurrentSessionContext.Bind(session);
-            session.BeginTransaction();
+            SessionManager.BindSession();
 
             Show();
         }
@@ -41,22 +39,7 @@ namespace ALaMaronaManager
 
         private void BuscarCliente_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ISessionFactory sessionFactory = (ISessionFactory)DIContainer.Kernel.GetService(typeof(ISessionFactory));
-            using (ISession session = CurrentSessionContext.Unbind(sessionFactory))
-            {
-                CurrentSessionContext.Unbind(session.SessionFactory);
-                if (session.Transaction != null
-                    && session.Transaction.IsActive
-                    && rollback)
-                {
-                    session.Transaction.Rollback();
-                }
-                else
-                {
-                    session.Transaction.Commit();
-                }
-                session.Close();
-            }
+            SessionManager.UnbindSession(rollback);
         }
     }
 }
