@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace ALaMaronaManager
 {
-    public partial class ALaMaronaManager : Form
+    public partial class ALaMaronaManagerHome : Form
     {
         private readonly IALaMaronaManagerFactory _factory;
 
-        public ALaMaronaManager(IALaMaronaManagerFactory factory)
+        public ALaMaronaManagerHome(IALaMaronaManagerFactory factory)
         {
             _factory = factory;
 

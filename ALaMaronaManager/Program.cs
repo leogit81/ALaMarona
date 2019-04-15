@@ -1,5 +1,4 @@
 ﻿using ALaMarona.Core.DI;
-using ALaMarona.Domain.Businesses;
 using Ninject;
 using System;
 using System.Reflection;
@@ -27,7 +26,7 @@ namespace ALaMaronaManager
 
             IALaMaronaManagerFactory factory = (IALaMaronaManagerFactory)DIContainer.Kernel.GetService(typeof(IALaMaronaManagerFactory));
 
-            Application.Run(new ALaMaronaManager(factory));
+            Application.Run(new ALaMaronaManagerHome(factory));
         }
     }
 }

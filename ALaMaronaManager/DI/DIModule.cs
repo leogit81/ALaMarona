@@ -1,5 +1,6 @@
 ﻿using ALaMarona.Core.DI;
 using ALaMaronaDAL.IoCExtension;
+using ALaMaronaManager.Mapper;
 using NHibernate;
 using Ninject;
 using Ninject.Extensions.Factory;
@@ -35,6 +36,11 @@ namespace ALaMaronaManager.DI
             );
 
             this.BindDAL();
+
+            this.BindMapper(x =>
+            {
+                x.AddProfile<ALaMaronaManagerProfile>();
+            });
         }
     }
 }

@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Businesses\IPaisBusiness.cs" />
     <Compile Include="Businesses\IPedidoBusiness.cs" />
     <Compile Include="Contracts\CreateDireccionRequest.cs" />
     <Compile Include="Contracts\CreatePersonaRequest.cs" />

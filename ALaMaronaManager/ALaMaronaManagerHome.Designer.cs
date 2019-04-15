@@ -1,6 +1,6 @@
 ﻿namespace ALaMaronaManager
 {
-    partial class ALaMaronaManager
+    partial class ALaMaronaManagerHome
     {
         /// <summary>
         /// Required designer variable.

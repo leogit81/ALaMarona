@@ -22,6 +22,7 @@ namespace ALaMarona.Core.DI
             iocModule.Bind<IProductoBusiness>().To<ProductoBusiness>().InNamedScope(NamedScope);
             iocModule.Bind<IPedidoBusiness>().To<PedidoBusiness>().InNamedScope(NamedScope);
             iocModule.Bind<IClienteBusiness>().To<ClienteBusiness>().InNamedScope(NamedScope);
+            iocModule.Bind<IPaisBusiness>().To<PaisBusiness>().InNamedScope(NamedScope);
         }
     }
 }

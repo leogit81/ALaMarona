@@ -116,5 +116,26 @@ namespace ALaMarona.Core.Businesses
 
             return true;
         }
+
+        public static string GetNombreCliente(ALaMarona.Domain.Entities.Cliente x)
+        {
+            string nombreCliente = string.Empty;
+
+            if (x.Nombre != null
+            && !string.IsNullOrEmpty(x.Nombre.Apellido)
+            && !string.IsNullOrEmpty(x.Nombre.Primero))
+            {
+                nombreCliente = x.Nombre?.Apellido + ", " + x.Nombre?.Primero;
+            }
+            else if (x.Nombre != null && !string.IsNullOrEmpty(x.Nombre.Alias))
+            {
+                nombreCliente = x.Nombre.Alias;
+            }
+            else if (!string.IsNullOrEmpty(x.EMail))
+            {
+                nombreCliente = x.EMail;
+            }
+            return nombreCliente;
+        }
     }
 }

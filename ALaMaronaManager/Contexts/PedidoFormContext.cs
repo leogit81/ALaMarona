@@ -1,4 +1,5 @@
 ﻿using ALaMarona.Domain.Businesses;
+using AutoMapper;
 
 namespace ALaMaronaManager
 {
@@ -6,12 +7,15 @@ namespace ALaMaronaManager
     {
         public IPedidoBusiness PedidoBus { get; protected set; }
         public IClienteBusiness ClienteBus { get; protected set; }
+        public IMapper Mapper { get; protected set; }
 
         public PedidoFormContext(IPedidoBusiness pedidoBus,
-            IClienteBusiness cliBus)
+            IClienteBusiness cliBus,
+            IMapper mapper)
         {
             PedidoBus = pedidoBus;
             ClienteBus = cliBus;
+            Mapper = mapper;
         }
     }
 }

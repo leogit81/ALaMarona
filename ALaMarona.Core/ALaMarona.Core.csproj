@@ -122,6 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ALaMaronaException.cs" />
+    <Compile Include="Business\PaisBusiness.cs" />
     <Compile Include="Business\ClienteBusiness.cs" />
     <Compile Include="Business\PedidoBusiness.cs" />
     <Compile Include="Business\ProductoBusiness.cs" />
